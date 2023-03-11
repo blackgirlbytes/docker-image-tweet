@@ -1,0 +1,24 @@
+# github action workflow to publish docker image to github container registry 
+
+name: Publish Docker image
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+jobs:  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build the Docker image
+        run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
+      - name: Log in to the Container registry
+        run: echo ${{ secrets.GITHUB_TOKEN }} | docker login docker.pkg.github.com -u ${{ github.actor }} --password-stdin
+      - name: Push the Docker image
+        run: docker push docker.pkg.github.com/${{ github.repository }}/my-image-name:$(date +%s)
+
+# Path: .github/workflow/publish.yml
+
+

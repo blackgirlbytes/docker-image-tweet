@@ -1,6 +1,7 @@
 # send a toot to Mastodon with Mastodon.py
 import os
 # import Mastodon.py
+import mastodon
 from mastodon import Mastodon
 
 
