@@ -17,4 +17,7 @@ mastodon = Mastodon(
 toot = "test test"
 
 # Send toot to Mastodon
-mastodon.toot(toot)
+response = mastodon.toot(toot)
+
+# Print response
+print(response)
