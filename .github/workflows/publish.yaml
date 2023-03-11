@@ -1,4 +1,4 @@
-# publish docker image to github container registry
+# publish docker image to GitHub Container Registry
 name: Publish Docker image
 
 on:
