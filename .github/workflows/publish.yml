@@ -18,14 +18,13 @@ jobs:
       - name: Push to GitHub Container Registry
         uses: docker/build-push-action@v1
         with:
+          name: blackgirlbytes/docker-image-tweet/example-copilot
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           repository: ${{ github.repository }}
           registry: docker.pkg.github.com
           tag_with_ref: true
           tag_with_sha: true
-
-          
 
 
 
