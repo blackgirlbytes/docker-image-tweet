@@ -19,7 +19,7 @@
 				"docker-build"
 			],
 			"python": {
-				"file": "network.py"
+				"file": "test.py"
 			}
 		}
 	]
